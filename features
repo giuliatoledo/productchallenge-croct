@@ -1,0 +1,111 @@
+[Croct] Challenge Product - Giulia Toledo Cavalcanti
+
+Feature: Registering on the Croct website (SIGN UP);
+
+Persona: Nicolas, 32, owner of an advertising agency located in São Paulo who wants to hire Croct's services to improve the digital experience of his clients.
+
+As a future Croct customer, Nicolas wants to register on the Croct website in order to contract services.
+
+1. Scenario: The user does not have an account created in the system.
+
+1. Given Nicolas does not have an account on the Croct system,
+2. And he selects "Create Account",
+3. And he fills in the indicated fields (name, email, password and phone),
+4. And he agrees to the terms of acceptance,
+5. When he presses the continue button,
+6. Then a welcome pop-up will appear
+7. And he will be redirected to the Croct customer panel.
+
+2. Scenario: The user does not complete his registration in the system.
+
+1. Given Nicolas does not have an account on the Croct system,
+2. And he selects "Create Account",
+3. And he does not fill in all the indicated fields (name, e-mail, password and phone),
+4. When he presses the continue button, an attention symbol will appear next to the unfilled fields,
+5. Then he will have to fill in to complete the registration.
+
+3. Scenario: The user does not agree with the terms of acceptance.
+
+1. Given Nicolas does not have an account on the Croct system,
+2. And he selects "Create Account",
+3. And he fills in the indicated fields (name, email, password and phone),
+4. And he doesn't agree with the terms of acceptance,
+5. When he clicks the "Continue" button, a message will appear asking you to accept the acceptance term,
+6. Then he will not be able to continue the registration.
+
+4. Scenario: The user does not enter a strong enough password.
+
+1. Given Nicolas does not have an account on the Croct system,
+2. And he selects "Create Account",
+3. And he fills in the indicated fields (name, email, password and phone),
+4. And the password does not meet the minimum security requirements,
+5. When he stops typing,
+6. Then a message will appear stating that the password is not secure enough to attempt a stronger password.
+
+5. Scenario: The user is inactive on the registration page.
+
+1. Given Nicolas does not have an account on the Croct system,
+2. And he selects "Create Account",
+3. And he leaves the page, remaining inactive for a while
+4. When he tries to fill in your details,
+5. Then a message will be displayed through a pop-up encouraging you to finalize the registration.
+
+6. Scenario: The user does not enter a valid phone number.
+
+1. Given Nicolas does not have an account on the Croct system,
+2. And he selects "Create Account",
+3. And he enters an invalid phone number,
+4. When he stops typing,
+5. Then a message will appear written "Please, enter a valid phone number".
+
+Feature: Logging in to the Croct website (SIGN IN);
+
+Persona: Nicolas, 32, owner of an advertising agency located in São Paulo who wants to hire Croct's services to improve the digital experience of his clients.
+
+As a future contractor for Croct services, Nicolas wants to login to the Croct website in order to have access to the customer panel.
+
+1. Scenario: The user already has an account created in the system.
+
+1. Given Nicolas has an account on the Croct system,
+2. And he fills in the "email" and "password" fields,
+3. And as long as the data is valid,
+4. When he presses the login button,
+5. Then he will be redirected to the Croct customer panel.
+2. Scenario: The user does not enter a valid email.
+
+1. Given Nicolas has an account on the Croct system,
+2. And he fills in the "email" and "password" fields,
+3. And the email is invalid,
+4. When he presses the login button,
+5. Then a message will appear stating that the e-mail is not in the database.
+
+3. Scenario: The user tries to access with incorrect data.
+
+1. Given Nicolas has an account on the Croct system,
+2. And he fills in the "email" and "password" fields,
+3. And one of the fields is incorrect,
+4. When he presses the login button,
+5. Then a message will appear stating that the data is incorrect, to try again.
+
+4. Scenario: The user forgets his password.
+
+1. Given Nicolas has an account on the Croct system,
+2. And he has forgotten his password,
+3. And he clicks on the "I forgot my password" button,
+4. When he informs the registered email,
+5. Then a new password recovery link will be sent to your email.
+
+5. Scenario: The user misses the password several times.
+
+1. Given Nicolas has an account on the Croct system,
+2. And he has wronged his password more than 3 times,
+4. When he tries again, a message will appear suggesting password recovery
+5. Then a new password recovery link will be sent to your email.
+
+6. Scenario: The user enters the entire password in uppercase mode.
+
+1. Given Nicolas has an account on the Croct system,
+2. And he fills in the "email" and "password" fields,
+3. And write in uppercase mode
+4. When entering the 4th character (considering a minimum 08 character pattern to compose the password),
+5. Then a message will be displayed alerting you that the system is case sensitive.
